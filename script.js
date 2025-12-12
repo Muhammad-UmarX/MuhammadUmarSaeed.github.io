@@ -1,24 +1,150 @@
-// Simple file data structure - REPLACE THIS WITH YOUR ACTUAL FILES
+const githubBaseUrl = "https://muhammad-umarx.github.io/MuhammadUmarSaeed.github.io";
+
+// Fixed file data structure with proper names
 const fileData = {
     designs: [
-        { name: "Logo Design", size: "2.4 MB", type: "image" },
-        { name: "Business Card", size: "1.8 MB", type: "image" },
-        { name: "Social Media Post", size: "1.5 MB", type: "image" },
-        { name: "Website Mockup", size: "3.2 MB", type: "image" },
-        { name: "Brochure Design", size: "4.1 MB", type: "document" },
-        { name: "Icon Set", size: "5.3 MB", type: "vector" }
+        {
+            name: "Gallery Sunset",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/Screenshot_20251211_103708_Gallery.jpg`
+        },
+        {
+            name: "Gallery Lake",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/Screenshot_20251211_103827_Gallery.jpg`
+        },
+        {
+            name: "Abstract Design 33",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/Untitled design (33).png`
+        },
+        {
+            name: "Highland Cow 5",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/highland cow 5.png`
+        },
+        {
+            name: "Highland Cow Wall Art",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/highland cow wall art.png`
+        },
+        {
+            name: "Minimalist Art",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/i.jpg`
+        },
+        {
+            name: "Creative Portrait",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/lv_0_20251210214330.jpg`
+        },
+        {
+            name: "Painting Artwork",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/painting 10.png`
+        },
+        {
+            name: "Modern Design RT",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/rt.jpg`
+        },
+        {
+            name: "Modern Design RT1",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/rt1.jpg`
+        }
     ],
     posters: [
-        { name: "Concert Poster", size: "3.8 MB", type: "image" },
-        { name: "Movie Poster", size: "4.2 MB", type: "image" },
-        { name: "Event Banner", size: "5.1 MB", type: "image" },
-        { name: "Sale Poster", size: "2.9 MB", type: "image" }
+        {
+            name: "Apple Juice Poster",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Apple juice PD.png`
+        },
+        {
+            name: "Burger Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Burger PD.png`
+        },
+        {
+            name: "Portrait Photo",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/IMG_8317.JPG`
+        },
+        {
+            name: "Gallery Art 1",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251210_213525_Gallery.jpg`
+        },
+        {
+            name: "Gallery Art 2",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251210_213537_Gallery.jpg`
+        },
+        {
+            name: "Gallery Art 3",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251211_103725_Gallery.jpg`
+        },
+        {
+            name: "Gallery Art 4",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251211_103740_Gallery.jpg`
+        },
+        {
+            name: "Cherry Blast Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/cherry blast PD.png`
+        },
+        {
+            name: "Citrus Time Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/citrus time PD.jpg`
+        },
+        {
+            name: "Coffee Poster Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/coffee poster design.jpg`
+        },
+        {
+            name: "Juice Poster Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/juice poster design.png`
+        },
+        {
+            name: "Creative Artwork",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/lv_0_20251210214532.jpg`
+        },
+        {
+            name: "Pizza Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/pizza PD.png`
+        },
+        {
+            name: "Rani Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/rani design.png`
+        },
+        {
+            name: "Watch Poster Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/watch poster design.png`
+        }
     ],
     videos: [
-        { name: "Product Demo Video", size: "24.5 MB", type: "video" },
-        { name: "Social Media Ad", size: "18.3 MB", type: "video" },
-        { name: "Event Highlights", size: "42.7 MB", type: "video" },
-        { name: "Tutorial Video", size: "36.8 MB", type: "video" }
+	{ 
+	    type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/IMG_8516.PNG` 
+	},
+	{
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/Screenshot_20251211_103754_Gallery.jpg`
+        },
+	{
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Designs/Screenshot_20251211_103810_Gallery.jpg`
+        },
+
     ]
 };
 
@@ -47,8 +173,8 @@ function updateFileCounts() {
 function openFolder(folderType) {
     const folderNames = {
         'designs': 'My Designs',
-        'posters': 'Posters & Banners',
-        'videos': 'Video Edits'
+        'posters': 'Poster/Ad Designs',
+        'videos': 'Product Designs'
     };
     
     const folderIcons = {
@@ -68,7 +194,7 @@ function openFolder(folderType) {
     document.body.style.overflow = 'hidden';
 }
 
-// Load files for a specific folder
+// Load files for a specific folder WITH THUMBNAILS
 function loadFolderFiles(folderType) {
     const files = fileData[folderType];
     
@@ -81,79 +207,121 @@ function loadFolderFiles(folderType) {
             <div class="no-files">
                 <i class="fas fa-folder-open"></i>
                 <p>No files found in this folder</p>
-                <p>Add your files to the "${folderType}" folder</p>
             </div>
         `;
         return;
     }
     
-    // Add each file to the list
+    // Add each file to the list WITH THUMBNAILS
     files.forEach(file => {
         const fileItem = document.createElement('div');
         fileItem.className = 'file-item';
         fileItem.onclick = () => viewFile(file);
         
-        // Get icon based on file type
-        let iconClass = 'fas fa-file';
-        if (file.type === 'image') iconClass = 'fas fa-image';
-        if (file.type === 'video') iconClass = 'fas fa-video';
-        if (file.type === 'document') iconClass = 'fas fa-file-pdf';
-        if (file.type === 'vector') iconClass = 'fas fa-draw-polygon';
-        
-        fileItem.innerHTML = `
-            <div class="file-icon">
-                <i class="${iconClass}"></i>
-            </div>
-            <div class="file-name">${file.name}</div>
-            <div class="file-size">${file.size}</div>
-        `;
+        // Create thumbnail for images
+        if (file.type === 'image' && file.imageUrl) {
+            // Use the same image URL for thumbnail (it will be resized by CSS)
+            fileItem.innerHTML = `
+                <div class="file-thumbnail">
+                    <img src="${file.imageUrl}" alt="${file.name}" loading="lazy">
+                    <div class="file-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+            `;
+        } else if (file.type === 'video') {
+            // For videos, show play icon
+            fileItem.innerHTML = `
+                <div class="file-thumbnail video-thumbnail">
+                    <i class="fas fa-play"></i>
+                    ${file.thumbnail ? `<img src="${file.thumbnail}" alt="${file.name}" loading="lazy">` : ''}
+                </div>
+            `;
+        } else {
+            // For other file types, show icon
+            let iconClass = 'fas fa-file';
+            if (file.type === 'document') iconClass = 'fas fa-file-pdf';
+            if (file.type === 'vector') iconClass = 'fas fa-draw-polygon';
+            
+            fileItem.innerHTML = `
+                <div class="file-thumbnail">
+                    <i class="${iconClass}"></i>
+                </div>
+            `;
+        }
         
         filesList.appendChild(fileItem);
     });
 }
 
-// View file (simple alert for demo)
 function viewFile(file) {
-    alert(`Viewing: ${file.name}\nSize: ${file.size}\n\nIn a real implementation, this would open the actual file.`);
+    // Create a file viewer modal
+    const viewerModal = document.createElement('div');
+    viewerModal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    `;
+    
+    let content = '';
+    
+    if (file.type === 'image') {
+        // For images
+        const imageUrl = file.imageUrl || `https://via.placeholder.com/600x400/6C63FF/FFFFFF?text=${encodeURIComponent(file.name)}`;
+        content = `
+            <img src="${imageUrl}" alt="${file.name}" 
+                 style="max-width: 90%; max-height: 80vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+        `;
+    } else if (file.type === 'video') {
+        // For videos
+        content = `
+            <div style="background: white; padding: 40px; border-radius: 10px; text-align: center; max-width: 500px;">
+                <i class="fas fa-video" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--dark); margin-bottom: 10px;">${file.name}</h3>
+                <p style="color: var(--gray);">Video file</p>
+            </div>
+        `;
+    }
+    
+    viewerModal.innerHTML = `
+        ${content}
+        <button onclick="this.parentElement.remove()" style="
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        ">×</button>
+    `;
+    
+    document.body.appendChild(viewerModal);
 }
 
-// Close modal
 function closeModal() {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-    if (event.target === modal) {
-        closeModal();
-    }
-};
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && modal.style.display === 'flex') {
+// Also close modal when clicking outside the content
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
         closeModal();
     }
 });
-
-// Function to add a file to a folder
-function addFile(folderType, fileName, fileSize, fileType) {
-    fileData[folderType].push({
-        name: fileName,
-        size: fileSize,
-        type: fileType
-    });
-    
-    // Update the display
-    updateFileCounts();
-    
-    // If this folder is currently open, refresh the view
-    const currentFolder = modalTitle.textContent.toLowerCase();
-    if (currentFolder.includes(folderType)) {
-        loadFolderFiles(folderType);
-    }
-}
-
-// Example of how to add a new file (for your reference)
-// addFile('designs', 'New Logo', '3.2 MB', 'image');
