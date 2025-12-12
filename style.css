@@ -232,21 +232,23 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
     background: white;
     border-radius: 20px;
-    width: 90%;
-    max-width: 800px;
+    width: 95%;
+    max-width: 1000px;
     max-height: 90vh;
     overflow: hidden;
     animation: modalSlideIn 0.3s ease;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes modalSlideIn {
@@ -267,6 +269,7 @@ footer {
     padding: 25px 30px;
     background: var(--dark);
     color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .modal-header h2 {
@@ -281,73 +284,207 @@ footer {
     cursor: pointer;
     color: white;
     transition: color 0.3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .close-btn:hover {
     color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .modal-body {
-    padding: 30px;
-    max-height: 60vh;
+    padding: 0;
+    max-height: calc(90vh - 90px);
     overflow-y: auto;
 }
 
-/* Files List */
+/* Files Grid - ONLY THUMBNAILS */
 .files-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 20px;
+    padding: 30px;
+    background: #fafafa;
 }
 
+/* File Item - THUMBNAIL ONLY */
 .file-item {
-    background: var(--light);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.2s;
+    position: relative;
     cursor: pointer;
-    border: 2px solid transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .file-item:hover {
-    transform: translateY(-3px);
-    border-color: var(--primary-light);
-    background: white;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2);
+    border-color: var(--primary);
 }
 
-.file-icon {
+/* Thumbnail Container */
+.file-thumbnail {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f5f7, #e8e8ec);
+}
+
+/* Thumbnail Image */
+.file-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.file-item:hover .file-thumbnail img {
+    transform: scale(1.1);
+}
+
+/* Overlay on Hover */
+.file-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.9), rgba(255, 101, 132, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.file-item:hover .file-overlay {
+    opacity: 1;
+}
+
+.file-overlay i {
+    color: white;
     font-size: 2.5rem;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Video Thumbnail */
+.video-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.video-thumbnail i {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.video-thumbnail img {
+    position: absolute;
+    opacity: 0.4;
+    filter: blur(1px);
+}
+
+/* File Icon (for non-images) */
+.file-thumbnail i.fas {
+    font-size: 3.5rem;
     color: var(--primary);
-    margin-bottom: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.file-name {
-    font-weight: 600;
-    color: var(--dark);
-    margin-bottom: 5px;
-    word-break: break-word;
-}
-
-.file-size {
-    color: var(--gray);
-    font-size: 0.85rem;
-}
-
+/* No files message */
 .no-files {
     grid-column: 1 / -1;
     text-align: center;
-    padding: 40px;
+    padding: 60px 30px;
     color: var(--gray);
+    background: white;
+    border-radius: 15px;
+    margin: 20px;
+    border: 2px dashed #e0e0e0;
 }
 
 .no-files i {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 4rem;
+    margin-bottom: 20px;
     opacity: 0.5;
+    color: var(--primary);
+}
+
+.no-files p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.no-files p:last-child {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Scrollbar styling */
+.modal-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #5a54d4;
+}
+
+/* Loading State */
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 30px;
+    color: var(--gray);
+}
+
+.loading i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .files-container {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 18px;
+        padding: 25px;
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -362,6 +499,10 @@ footer {
     
     .welcome-section h1 {
         font-size: 2.2rem;
+    }
+    
+    .welcome-section {
+        padding: 30px 20px;
     }
     
     .folder {
@@ -380,10 +521,17 @@ footer {
     
     .modal-content {
         width: 95%;
+        max-width: 95%;
     }
     
     .files-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .file-item:hover {
+        transform: translateY(-5px) scale(1.01);
     }
 }
 
@@ -396,12 +544,12 @@ footer {
         font-size: 1.8rem;
     }
     
-    .welcome-section {
-        padding: 25px;
-    }
-    
     .welcome-section h1 {
         font-size: 1.8rem;
+    }
+    
+    .welcome-section p {
+        font-size: 1rem;
     }
     
     .folders-container {
@@ -424,10 +572,54 @@ footer {
     }
     
     .files-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+        padding: 15px;
     }
     
-    .instructions {
+    .modal-header {
         padding: 20px;
     }
+    
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Image Viewer Modal (created by JavaScript) */
+.file-viewer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.viewer-image {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+/* Remove old file item styles (duplicate/conflicting) */
+.file-item.text-center,
+.file-item .file-name,
+.file-item .file-size,
+.file-item .file-type,
+.file-item .file-info {
+    display: none;
 }
