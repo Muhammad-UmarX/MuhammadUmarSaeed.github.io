@@ -56,19 +56,9 @@ const fileData = {
     ],
     posters: [
         {
-            name: "Apple Juice Poster",
-            type: "image",
-            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Apple juice PD.png`
-        },
-        {
             name: "Burger Design",
             type: "image",
             imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Burger PD.png`
-        },
-        {
-            name: "Portrait Photo",
-            type: "image",
-            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/IMG_8317.JPG`
         },
         {
             name: "Gallery Art 1",
@@ -81,34 +71,9 @@ const fileData = {
             imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251210_213537_Gallery.jpg`
         },
         {
-            name: "Gallery Art 3",
-            type: "image",
-            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251211_103725_Gallery.jpg`
-        },
-        {
-            name: "Gallery Art 4",
-            type: "image",
-            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251211_103740_Gallery.jpg`
-        },
-        {
-            name: "Cherry Blast Design",
-            type: "image",
-            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/cherry blast PD.png`
-        },
-        {
-            name: "Citrus Time Design",
-            type: "image",
-            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/citrus time PD.jpg`
-        },
-        {
             name: "Coffee Poster Design",
             type: "image",
             imageUrl: `${githubBaseUrl}/Poster, Banner Designs/coffee poster design.jpg`
-        },
-        {
-            name: "Juice Poster Design",
-            type: "image",
-            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/juice poster design.png`
         },
         {
             name: "Creative Artwork",
@@ -119,11 +84,6 @@ const fileData = {
             name: "Pizza Design",
             type: "image",
             imageUrl: `${githubBaseUrl}/Poster, Banner Designs/pizza PD.png`
-        },
-        {
-            name: "Rani Design",
-            type: "image",
-            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/rani design.png`
         },
         {
             name: "Watch Poster Design",
@@ -144,7 +104,46 @@ const fileData = {
             type: "image",
             imageUrl: `${githubBaseUrl}/Designs/Screenshot_20251211_103810_Gallery.jpg`
         },
-
+	{
+            name: "Portrait Photo",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/IMG_8317.JPG`
+        },
+	{
+            name: "Gallery Art 4",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251211_103740_Gallery.jpg`
+        },
+	{
+            name: "Gallery Art 3",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Screenshot_20251211_103725_Gallery.jpg`
+        },
+	{
+            name: "Apple Juice Poster",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/Apple juice PD.png`
+        },
+	{
+            name: "Cherry Blast Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/cherry blast PD.png`
+        },
+	{
+            name: "Rani Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/rani design.png`
+        },
+	{
+            name: "Citrus Time Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/citrus time PD.jpg`
+        },
+	{
+            name: "Juice Poster Design",
+            type: "image",
+            imageUrl: `${githubBaseUrl}/Poster, Banner Designs/juice poster design.png`
+        }
     ]
 };
 
